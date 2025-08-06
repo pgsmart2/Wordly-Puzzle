@@ -1,28 +1,174 @@
-// Enhanced Word Lists with themed categories
+// Massive Word Database with Multiple Categories
 const wordLists = {
     easy: [
-        ["CAT", "DOG", "FISH", "BIRD", "COW", "PIG", "HEN"],
-        ["SUN", "MOON", "STAR", "SKY", "TREE", "LEAF", "ROCK"],
-        ["RED", "BLUE", "GREEN", "PINK", "GOLD", "GRAY", "BROWN"],
-        ["BOOK", "PEN", "DESK", "CHAIR", "LAMP", "DOOR", "WALL"]
+        // Animals
+        ["CAT", "DOG", "FISH", "BIRD", "COW", "PIG", "HEN", "DUCK", "GOAT", "BEAR"],
+        ["LION", "TIGER", "ZEBRA", "HORSE", "SHEEP", "MOUSE", "FROG", "SNAKE"],
+        ["EAGLE", "SHARK", "WHALE", "DEER", "WOLF", "FOX", "RABBIT", "TURTLE"],
+        
+        // Food & Drinks
+        ["APPLE", "BREAD", "CAKE", "MILK", "JUICE", "PIZZA", "PASTA", "RICE"],
+        ["BANANA", "ORANGE", "GRAPE", "LEMON", "BERRY", "PEACH", "MANGO"],
+        ["WATER", "COFFEE", "TEA", "SODA", "WINE", "BEER", "SHAKE", "SOUP"],
+        
+        // Nature
+        ["SUN", "MOON", "STAR", "SKY", "TREE", "LEAF", "ROCK", "SAND"],
+        ["OCEAN", "RIVER", "LAKE", "HILL", "CAVE", "BEACH", "FIELD", "PARK"],
+        ["FLOWER", "GRASS", "STONE", "CLOUD", "RAIN", "SNOW", "WIND"],
+        
+        // Colors & Objects
+        ["RED", "BLUE", "GREEN", "PINK", "GOLD", "GRAY", "BROWN", "BLACK"],
+        ["BOOK", "PEN", "DESK", "CHAIR", "LAMP", "DOOR", "WALL", "WINDOW"],
+        ["CAR", "BUS", "BIKE", "BOAT", "PLANE", "TRAIN", "TRUCK", "SHIP"]
     ],
     medium: [
-        ["JAVASCRIPT", "HTML", "CSS", "NODE", "REACT", "PYTHON", "JAVA"],
+        // Technology
+        ["JAVASCRIPT", "HTML", "CSS", "NODE", "REACT", "PYTHON", "JAVA", "SWIFT"],
+        ["COMPUTER", "INTERNET", "SOFTWARE", "HARDWARE", "DATABASE", "NETWORK"],
+        ["ANDROID", "IPHONE", "TABLET", "LAPTOP", "DESKTOP", "SERVER", "CLOUD"],
+        ["ALGORITHM", "FUNCTION", "VARIABLE", "ARRAY", "OBJECT", "METHOD"],
+        
+        // Geography & Travel
         ["MOUNTAIN", "OCEAN", "FOREST", "DESERT", "RIVER", "VALLEY", "ISLAND"],
+        ["PARIS", "LONDON", "TOKYO", "SYDNEY", "CAIRO", "MOSCOW", "BERLIN"],
+        ["AIRPORT", "HOTEL", "MUSEUM", "CASTLE", "BRIDGE", "TEMPLE", "PALACE"],
+        ["PASSPORT", "LUGGAGE", "TICKET", "JOURNEY", "VACATION", "ADVENTURE"],
+        
+        // Music & Arts
         ["GUITAR", "PIANO", "VIOLIN", "DRUMS", "FLUTE", "TRUMPET", "SAXOPHONE"],
-        ["ADVENTURE", "MYSTERY", "FANTASY", "ROMANCE", "THRILLER", "COMEDY", "DRAMA"]
+        ["MELODY", "RHYTHM", "HARMONY", "SYMPHONY", "CONCERT", "ORCHESTRA"],
+        ["PAINTING", "SCULPTURE", "DRAWING", "CANVAS", "BRUSH", "PALETTE"],
+        ["THEATER", "OPERA", "BALLET", "DANCE", "STAGE", "CURTAIN", "SPOTLIGHT"],
+        
+        // Sports & Games
+        ["FOOTBALL", "BASKETBALL", "TENNIS", "SOCCER", "BASEBALL", "HOCKEY"],
+        ["SWIMMING", "RUNNING", "CYCLING", "SKIING", "SURFING", "CLIMBING"],
+        ["CHAMPION", "VICTORY", "MEDAL", "TROPHY", "STADIUM", "COACH", "TEAM"],
+        ["CHESS", "POKER", "PUZZLE", "BOARD", "CARDS", "DICE", "STRATEGY"],
+        
+        // Movies & Entertainment
+        ["ADVENTURE", "MYSTERY", "FANTASY", "ROMANCE", "THRILLER", "COMEDY", "DRAMA"],
+        ["DIRECTOR", "ACTOR", "SCRIPT", "CAMERA", "SCENE", "MOVIE", "CINEMA"],
+        ["SUPERHERO", "VILLAIN", "PRINCESS", "WIZARD", "DRAGON", "MAGIC"],
+        
+        // Science & Space
+        ["PLANET", "GALAXY", "ASTEROID", "COMET", "TELESCOPE", "ROCKET", "SATELLITE"],
+        ["CHEMISTRY", "PHYSICS", "BIOLOGY", "MOLECULE", "ATOM", "ELECTRON"],
+        ["LABORATORY", "EXPERIMENT", "RESEARCH", "DISCOVERY", "INVENTION"]
     ],
     hard: [
+        // Advanced Technology
         ["ALGORITHM", "DATABASE", "FRAMEWORK", "REPOSITORY", "INTEGRATION", "DEPLOYMENT"],
-        ["CONSTELLATION", "ATMOSPHERE", "GRAVITATIONAL", "ELECTROMAGNETIC", "PHOTOSYNTHESIS", "BIODIVERSITY"],
-        ["ARCHITECTURE", "ENGINEERING", "MATHEMATICS", "PHILOSOPHY", "PSYCHOLOGY", "ANTHROPOLOGY"],
-        ["REVOLUTIONARY", "EXTRAORDINARY", "SOPHISTICATED", "UNPRECEDENTED", "COMPREHENSIVE", "MAGNIFICENT"]
+        ["ARTIFICIAL", "INTELLIGENCE", "MACHINE", "LEARNING", "BLOCKCHAIN", "CRYPTOCURRENCY"],
+        ["CYBERSECURITY", "ENCRYPTION", "AUTHENTICATION", "VIRTUALIZATION", "AUTOMATION"],
+        ["PROGRAMMING", "DEVELOPMENT", "ARCHITECTURE", "INFRASTRUCTURE", "OPTIMIZATION"],
+        
+        // Advanced Science
+        ["CONSTELLATION", "ATMOSPHERE", "GRAVITATIONAL", "ELECTROMAGNETIC", "PHOTOSYNTHESIS"],
+        ["BIODIVERSITY", "ECOSYSTEM", "EVOLUTION", "GENETICS", "CHROMOSOME", "MUTATION"],
+        ["THERMODYNAMICS", "QUANTUM", "RELATIVITY", "PARTICLE", "ACCELERATOR"],
+        ["MICROSCOPE", "TELESCOPE", "LABORATORY", "HYPOTHESIS", "EXPERIMENT"],
+        
+        // Academic Fields
+        ["ARCHITECTURE", "ENGINEERING", "MATHEMATICS", "PHILOSOPHY", "PSYCHOLOGY"],
+        ["ANTHROPOLOGY", "ARCHAEOLOGY", "SOCIOLOGY", "LINGUISTICS", "LITERATURE"],
+        ["ECONOMICS", "POLITICAL", "GEOGRAPHY", "HISTORY", "JOURNALISM"],
+        ["MEDICINE", "SURGERY", "DIAGNOSIS", "TREATMENT", "THERAPY", "RECOVERY"],
+        
+        // Complex Concepts
+        ["REVOLUTIONARY", "EXTRAORDINARY", "SOPHISTICATED", "UNPRECEDENTED"],
+        ["COMPREHENSIVE", "MAGNIFICENT", "SPECTACULAR", "PHENOMENAL", "INCREDIBLE"],
+        ["TRANSFORMATION", "INNOVATION", "CREATIVITY", "IMAGINATION", "INSPIRATION"],
+        ["COMMUNICATION", "COLLABORATION", "ORGANIZATION", "ADMINISTRATION"]
     ],
     expert: [
-        ["CRYPTOCURRENCY", "BLOCKCHAIN", "DECENTRALIZATION", "AUTHENTICATION", "CYBERSECURITY", "VIRTUALIZATION"],
-        ["NEUROPLASTICITY", "CONSCIOUSNESS", "ELECTROMAGNETIC", "THERMODYNAMICS", "QUANTUM", "RELATIVITY"],
-        ["ENTREPRENEURSHIP", "GLOBALIZATION", "SUSTAINABILITY", "INNOVATION", "TRANSFORMATION", "OPTIMIZATION"],
-        ["INTERDISCIPLINARY", "MULTIDIMENSIONAL", "INCOMPREHENSIBLE", "DISPROPORTIONATE", "COUNTERPRODUCTIVE", "UNCONVENTIONAL"]
+        // Expert Technology
+        ["CRYPTOCURRENCY", "BLOCKCHAIN", "DECENTRALIZATION", "AUTHENTICATION", "CYBERSECURITY"],
+        ["VIRTUALIZATION", "CONTAINERIZATION", "MICROSERVICES", "ORCHESTRATION"],
+        ["NEUROPLASTICITY", "CONSCIOUSNESS", "ELECTROMAGNETIC", "THERMODYNAMICS"],
+        ["NANOTECHNOLOGY", "BIOTECHNOLOGY", "TELECOMMUNICATIONS", "SUPERCOMPUTING"],
+        
+        // Expert Science & Medicine
+        ["PHARMACOLOGY", "IMMUNOLOGY", "NEUROSCIENCE", "BIOCHEMISTRY", "MICROBIOLOGY"],
+        ["ASTROPHYSICS", "GEOPHYSICS", "METEOROLOGY", "SEISMOLOGY", "OCEANOGRAPHY"],
+        ["PALEONTOLOGY", "ENTOMOLOGY", "ORNITHOLOGY", "HERPETOLOGY", "ICHTHYOLOGY"],
+        ["EPIDEMIOLOGY", "PATHOLOGY", "RADIOLOGY", "CARDIOLOGY", "DERMATOLOGY"],
+        
+        // Expert Business & Society
+        ["ENTREPRENEURSHIP", "GLOBALIZATION", "SUSTAINABILITY", "INNOVATION"],
+        ["TRANSFORMATION", "OPTIMIZATION", "DIVERSIFICATION", "SPECIALIZATION"],
+        ["INTERNATIONALIZATION", "DEMOCRATIZATION", "INDUSTRIALIZATION"],
+        ["COMMERCIALIZATION", "STANDARDIZATION", "PERSONALIZATION"],
+        
+        // Expert Complex Terms
+        ["INTERDISCIPLINARY", "MULTIDIMENSIONAL", "INCOMPREHENSIBLE"],
+        ["DISPROPORTIONATE", "COUNTERPRODUCTIVE", "UNCONVENTIONAL"],
+        ["UNCHARACTERISTIC", "INDISTINGUISHABLE", "INCOMPATIBILITY"],
+        ["RESPONSIBILITIES", "CHARACTERISTICS", "REPRESENTATIVES", "ACCOMPLISHMENTS"]
+    ]
+};
+
+// Category-specific word sets
+const categoryWords = {
+    animals: {
+        easy: ["CAT", "DOG", "FISH", "BIRD", "COW", "PIG", "HEN", "DUCK", "GOAT", "BEAR"],
+        medium: ["ELEPHANT", "GIRAFFE", "PENGUIN", "DOLPHIN", "KANGAROO", "CHEETAH", "GORILLA"],
+        hard: ["RHINOCEROS", "HIPPOPOTAMUS", "CHIMPANZEE", "CROCODILE", "BUTTERFLY", "OCTOPUS"],
+        expert: ["TYRANNOSAURUS", "BRONTOSAURUS", "TRICERATOPS", "VELOCIRAPTOR", "ARCHAEOPTERYX"]
+    },
+    food: {
+        easy: ["APPLE", "BREAD", "CAKE", "MILK", "JUICE", "PIZZA", "PASTA", "RICE"],
+        medium: ["SANDWICH", "HAMBURGER", "CHOCOLATE", "STRAWBERRY", "PINEAPPLE", "AVOCADO"],
+        hard: ["CAPPUCCINO", "CROISSANT", "SPAGHETTI", "MOZZARELLA", "PARMESAN", "BRUSCHETTA"],
+        expert: ["RATATOUILLE", "BOUILLABAISSE", "CHATEAUBRIAND", "PROSCIUTTO", "GORGONZOLA"]
+    },
+    technology: {
+        easy: ["PHONE", "COMPUTER", "INTERNET", "EMAIL", "WEBSITE", "GAME", "APP"],
+        medium: ["JAVASCRIPT", "HTML", "CSS", "PYTHON", "ANDROID", "IPHONE", "TABLET"],
+        hard: ["ALGORITHM", "DATABASE", "FRAMEWORK", "REPOSITORY", "INTEGRATION"],
+        expert: ["CRYPTOCURRENCY", "BLOCKCHAIN", "ARTIFICIAL", "INTELLIGENCE", "MACHINE"]
+    },
+    nature: {
+        easy: ["SUN", "MOON", "STAR", "SKY", "TREE", "LEAF", "ROCK", "SAND"],
+        medium: ["MOUNTAIN", "OCEAN", "FOREST", "DESERT", "RIVER", "VALLEY", "ISLAND"],
+        hard: ["CONSTELLATION", "ATMOSPHERE", "GRAVITATIONAL", "PHOTOSYNTHESIS"],
+        expert: ["BIODIVERSITY", "ECOSYSTEM", "THERMODYNAMICS", "ELECTROMAGNETIC"]
+    },
+    sports: {
+        easy: ["BALL", "GAME", "TEAM", "WIN", "PLAY", "RUN", "JUMP", "KICK"],
+        medium: ["FOOTBALL", "BASKETBALL", "TENNIS", "SOCCER", "BASEBALL", "HOCKEY"],
+        hard: ["CHAMPIONSHIP", "TOURNAMENT", "COMPETITION", "ATHLETICS", "GYMNASIUM"],
+        expert: ["PROFESSIONAL", "INTERNATIONAL", "CHAMPIONSHIP", "SPORTSMANSHIP"]
+    },
+    music: {
+        easy: ["SONG", "SING", "DANCE", "BEAT", "TUNE", "NOTE", "PLAY"],
+        medium: ["GUITAR", "PIANO", "VIOLIN", "DRUMS", "FLUTE", "TRUMPET", "SAXOPHONE"],
+        hard: ["SYMPHONY", "ORCHESTRA", "CONDUCTOR", "COMPOSER", "HARMONY", "MELODY"],
+        expert: ["PHILHARMONIC", "CONSERVATORY", "VIRTUOSO", "CRESCENDO", "STACCATO"]
+    },
+    travel: {
+        easy: ["TRIP", "HOTEL", "PLANE", "TRAIN", "CAR", "MAP", "CITY"],
+        medium: ["PASSPORT", "LUGGAGE", "TICKET", "JOURNEY", "VACATION", "ADVENTURE"],
+        hard: ["DESTINATION", "EXPLORATION", "EXPEDITION", "ITINERARY", "RESERVATION"],
+        expert: ["INTERNATIONAL", "TRANSPORTATION", "ACCOMMODATION", "SIGHTSEEING"]
+    },
+    science: {
+        easy: ["ATOM", "CELL", "PLANT", "ANIMAL", "WATER", "AIR", "FIRE"],
+        medium: ["CHEMISTRY", "PHYSICS", "BIOLOGY", "MOLECULE", "ELECTRON", "PROTON"],
+        hard: ["LABORATORY", "EXPERIMENT", "HYPOTHESIS", "RESEARCH", "DISCOVERY"],
+        expert: ["NEUROPLASTICITY", "CONSCIOUSNESS", "QUANTUM", "RELATIVITY", "PARTICLE"]
+    },
+    movies: {
+        easy: ["MOVIE", "ACTOR", "STORY", "HERO", "MAGIC", "LOVE", "FIGHT"],
+        medium: ["ADVENTURE", "MYSTERY", "FANTASY", "ROMANCE", "THRILLER", "COMEDY"],
+        hard: ["DIRECTOR", "PRODUCER", "SCREENPLAY", "CINEMATOGRAPHY", "SOUNDTRACK"],
+        expert: ["BLOCKBUSTER", "INDEPENDENT", "DOCUMENTARY", "BIOGRAPHICAL", "ANIMATED"]
+    },
+    books: {
+        easy: ["BOOK", "READ", "STORY", "PAGE", "WORD", "HERO", "TALE"],
+        medium: ["NOVEL", "AUTHOR", "CHAPTER", "CHARACTER", "LIBRARY", "POETRY"],
+        hard: ["LITERATURE", "BIOGRAPHY", "ENCYCLOPEDIA", "DICTIONARY", "MANUSCRIPT"],
+        expert: ["BIBLIOGRAPHY", "AUTOBIOGRAPHY", "CONTEMPORARY", "SHAKESPEARE", "HEMINGWAY"]
     ]
 };
 
@@ -39,6 +185,9 @@ let gameState = {
     timer: null,
     timeLeft: 60,
     startTime: 60,
+    speedBonus: 0,
+    freezeTimeLeft: 0,
+    dailyChallengeCompleted: localStorage.getItem('dailyChallenge') === new Date().toDateString(),
     isSelecting: false,
     selectedCells: [],
     selectionDirection: null,
@@ -47,18 +196,21 @@ let gameState = {
     comboMultiplier: 1,
     comboCount: 0,
     soundEnabled: localStorage.getItem('soundEnabled') !== 'false',
-    currentTheme: localStorage.getItem('theme') || 'default',
-    achievements: JSON.parse(localStorage.getItem('achievements')) || []
+    currentTheme: localStorage.getItem('theme') || 'cyberpunk',
+    achievements: JSON.parse(localStorage.getItem('achievements')) || [],
+    selectedCategory: 'random'
 };
 
 // Game elements
 const elements = {
     difficultySelect: document.getElementById('difficultySelect'),
     themeSelect: document.getElementById('themeSelect'),
+    categorySelect: document.getElementById('categorySelect'),
     timeLeft: document.getElementById('timeLeft'),
     scoreValue: document.getElementById('scoreValue'),
     totalScore: document.getElementById('totalScore'),
     streak: document.getElementById('streak'),
+    speedBonus: document.getElementById('speedBonus'),
     progressValue: document.getElementById('progressValue'),
     progressBar: document.getElementById('progressBar'),
     wordSearchTable: document.getElementById('wordSearchTable'),
@@ -66,6 +218,7 @@ const elements = {
     resetButton: document.getElementById('resetButton'),
     pauseButton: document.getElementById('pauseButton'),
     shuffleButton: document.getElementById('shuffleButton'),
+    freezeTimeBtn: document.getElementById('freezeTimeBtn'),
     powerUpBtn: document.getElementById('powerUpBtn'),
     hintsLeft: document.getElementById('hintsLeft'),
     comboIndicator: document.getElementById('comboIndicator'),
@@ -73,7 +226,9 @@ const elements = {
     resultModal: document.getElementById('resultModal'),
     closeModal: document.getElementById('closeModal'),
     playAgainBtn: document.getElementById('playAgainBtn'),
-    soundToggle: document.getElementById('soundToggle')
+    soundToggle: document.getElementById('soundToggle'),
+    dailyChallenge: document.getElementById('dailyChallenge'),
+    startDailyBtn: document.getElementById('startDailyBtn')
 };
 
 // Initialize game
@@ -102,9 +257,14 @@ function initializeGame() {
 function setupEventListeners() {
     elements.difficultySelect.addEventListener('change', (e) => setDifficulty(e.target.value));
     elements.themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
+    elements.categorySelect.addEventListener('change', (e) => {
+        gameState.selectedCategory = e.target.value;
+        setDifficulty(elements.difficultySelect.value);
+    });
     elements.resetButton.addEventListener('click', resetGame);
     elements.pauseButton.addEventListener('click', togglePause);
     elements.shuffleButton.addEventListener('click', shuffleGrid);
+    elements.freezeTimeBtn.addEventListener('click', freezeTime);
     elements.powerUpBtn.addEventListener('click', useHint);
     elements.closeModal.addEventListener('click', closeModal);
     elements.playAgainBtn.addEventListener('click', () => {
@@ -112,6 +272,7 @@ function setupEventListeners() {
         resetGame();
     });
     elements.soundToggle.addEventListener('click', toggleSound);
+    elements.startDailyBtn.addEventListener('click', startDailyChallenge);
     
     document.addEventListener('mouseup', () => {
         if (gameState.isSelecting) {
@@ -141,6 +302,12 @@ function setupEventListeners() {
                     useHint();
                 }
                 break;
+            case 'f':
+            case 'F':
+                if (gameState.freezeTimeLeft <= 0) {
+                    freezeTime();
+                }
+                break;
         }
     });
 }
@@ -158,8 +325,20 @@ function setDifficulty(difficulty) {
     gameState.startTime = settings.time;
     gameState.timeLeft = settings.time;
     
-    const wordSets = wordLists[difficulty];
-    gameState.words = wordSets[Math.floor(Math.random() * wordSets.length)];
+    // Select words based on category
+    if (gameState.selectedCategory === 'random') {
+        const wordSets = wordLists[difficulty];
+        gameState.words = wordSets[Math.floor(Math.random() * wordSets.length)];
+    } else {
+        const categorySet = categoryWords[gameState.selectedCategory];
+        if (categorySet && categorySet[difficulty]) {
+            gameState.words = [...categorySet[difficulty]];
+        } else {
+            // Fallback to random if category doesn't have words for this difficulty
+            const wordSets = wordLists[difficulty];
+            gameState.words = wordSets[Math.floor(Math.random() * wordSets.length)];
+        }
+    }
     
     resetGame();
 }
@@ -168,7 +347,9 @@ function resetGame() {
     clearInterval(gameState.timer);
     gameState.foundWords = [];
     gameState.score = 0;
+    gameState.speedBonus = 0;
     gameState.timeLeft = gameState.startTime;
+    gameState.freezeTimeLeft = 0;
     gameState.isPaused = false;
     gameState.hintsLeft = 3;
     gameState.comboMultiplier = 1;
@@ -178,6 +359,8 @@ function resetGame() {
     
     elements.pauseButton.innerHTML = '<i class="fas fa-pause"></i> Pause';
     elements.hintsLeft.textContent = gameState.hintsLeft;
+    elements.freezeTimeBtn.innerHTML = '<i class="fas fa-snowflake"></i> Freeze Time';
+    elements.freezeTimeBtn.disabled = false;
     
     generateGrid();
     updateUI();
@@ -396,12 +579,14 @@ function checkForWord() {
     if (foundWord) {
         gameState.foundWords.push(foundWord);
         
-        // Calculate score with combo multiplier
+        // Calculate score with combo multiplier and speed bonus
         const baseScore = foundWord.length * 10;
+        const speedBonusPoints = Math.max(0, Math.floor((gameState.startTime - gameState.timeLeft) / 10) * 5);
         const bonusScore = Math.floor(baseScore * (gameState.comboMultiplier - 1));
-        const totalWordScore = baseScore + bonusScore;
+        const totalWordScore = baseScore + bonusScore + speedBonusPoints;
         
         gameState.score += totalWordScore;
+        gameState.speedBonus += speedBonusPoints;
         gameState.comboCount++;
         
         // Increase combo multiplier
@@ -413,7 +598,8 @@ function checkForWord() {
         highlightFoundWord();
         updateUI();
         playSound('found');
-        createWordFoundEffect();
+        createWordFoundEffect(totalWordScore);
+        createExplosionEffect();
         
         // Check for game completion
         if (gameState.foundWords.length === gameState.words.length) {
@@ -447,12 +633,11 @@ function showComboIndicator() {
     }, 2000);
 }
 
-function createWordFoundEffect() {
+function createWordFoundEffect(score) {
     // Create floating score animation
     const scoreElement = document.createElement('div');
     scoreElement.className = 'floating-score';
-    scoreElement.textContent = `+${gameState.words.find(w => gameState.foundWords.includes(w)) ? 
-        gameState.words.find(w => gameState.foundWords.includes(w)).length * 10 : 10}`;
+    scoreElement.textContent = `+${score}`;
     scoreElement.style.cssText = `
         position: absolute;
         top: 50%;
@@ -481,6 +666,94 @@ function createWordFoundEffect() {
         scoreElement.remove();
         style.remove();
     }, 1000);
+}
+
+function createExplosionEffect() {
+    const explosion = document.createElement('div');
+    explosion.className = 'word-explosion';
+    explosion.style.cssText = `
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    `;
+    
+    // Create explosion particles
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'explosion-particle';
+        const angle = (i / 12) * Math.PI * 2;
+        const distance = 50 + Math.random() * 30;
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+        
+        particle.style.setProperty('--dx', dx + 'px');
+        particle.style.setProperty('--dy', dy + 'px');
+        explosion.appendChild(particle);
+    }
+    
+    elements.wordSearchTable.parentElement.appendChild(explosion);
+    
+    setTimeout(() => {
+        explosion.remove();
+    }, 800);
+}
+
+function freezeTime() {
+    if (gameState.freezeTimeLeft > 0 || gameState.isPaused) return;
+    
+    gameState.freezeTimeLeft = 10; // 10 seconds freeze
+    elements.freezeTimeBtn.innerHTML = '<i class="fas fa-snowflake"></i> Frozen (10s)';
+    elements.freezeTimeBtn.disabled = true;
+    
+    // Visual effect
+    elements.wordSearchTable.style.filter = 'hue-rotate(180deg) brightness(1.2)';
+    document.body.classList.add('screen-shake');
+    
+    setTimeout(() => {
+        document.body.classList.remove('screen-shake');
+    }, 500);
+    
+    playSound('freeze');
+    
+    const freezeInterval = setInterval(() => {
+        gameState.freezeTimeLeft--;
+        elements.freezeTimeBtn.innerHTML = `<i class="fas fa-snowflake"></i> Frozen (${gameState.freezeTimeLeft}s)`;
+        
+        if (gameState.freezeTimeLeft <= 0) {
+            clearInterval(freezeInterval);
+            elements.freezeTimeBtn.innerHTML = '<i class="fas fa-snowflake"></i> Used';
+            elements.wordSearchTable.style.filter = 'none';
+        }
+    }, 1000);
+}
+
+function startDailyChallenge() {
+    if (gameState.dailyChallengeCompleted) return;
+    
+    // Set special daily challenge words
+    const today = new Date();
+    const seed = today.getDate() + today.getMonth() * 31 + today.getFullYear() * 365;
+    Math.seedrandom = function(seed) {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+    };
+    
+    // Use seed to select consistent daily words
+    const allWords = [...wordLists.medium.flat(), ...wordLists.hard.flat()];
+    gameState.words = [];
+    for (let i = 0; i < 8; i++) {
+        const index = Math.floor(Math.seedrandom(seed + i) * allWords.length);
+        if (!gameState.words.includes(allWords[index])) {
+            gameState.words.push(allWords[index]);
+        }
+    }
+    
+    gameState.gridSize = 14;
+    gameState.startTime = 180; // 3 minutes for daily challenge
+    gameState.timeLeft = 180;
+    
+    elements.dailyChallenge.style.display = 'none';
+    resetGame();
 }
 
 function useHint() {
@@ -613,7 +886,7 @@ function startTimer() {
     clearInterval(gameState.timer);
     
     gameState.timer = setInterval(() => {
-        if (!gameState.isPaused && gameState.timeLeft > 0) {
+        if (!gameState.isPaused && gameState.timeLeft > 0 && gameState.freezeTimeLeft <= 0) {
             gameState.timeLeft--;
             updateUI();
             
@@ -725,6 +998,7 @@ function closeModal() {
 function updateUI() {
     elements.timeLeft.textContent = gameState.timeLeft;
     elements.scoreValue.textContent = gameState.score;
+    elements.speedBonus.textContent = gameState.speedBonus;
     elements.totalScore.textContent = gameState.totalScore;
     elements.streak.textContent = gameState.bestStreak;
     
@@ -746,8 +1020,27 @@ function applyTheme(theme) {
     gameState.currentTheme = theme;
     localStorage.setItem('theme', theme);
     
-    document.body.className = theme === 'default' ? '' : `theme-${theme}`;
+    document.body.className = `theme-${theme}`;
     elements.themeSelect.value = theme;
+    
+    // Update particles based on theme
+    updateParticles(theme);
+}
+
+function updateParticles(theme) {
+    const particles = document.querySelectorAll('.particle');
+    const colors = {
+        cyberpunk: '#00ff88',
+        galaxy: '#9333ea',
+        volcano: '#dc2626',
+        arctic: '#0ea5e9',
+        rainbow: '#ec4899',
+        midnight: '#6366f1'
+    };
+    
+    particles.forEach(particle => {
+        particle.style.background = colors[theme] || '#ffffff';
+    });
 }
 
 function toggleSound() {
@@ -776,7 +1069,8 @@ function playSound(type) {
         hint: { frequency: 880, duration: 0.2 },
         shuffle: { frequency: 330, duration: 0.15 },
         win: { frequency: 523, duration: 0.5 },
-        lose: { frequency: 196, duration: 0.4 }
+        lose: { frequency: 196, duration: 0.4 },
+        freeze: { frequency: 150, duration: 0.3 }
     };
     
     const sound = soundMap[type];
@@ -801,15 +1095,32 @@ function playSound(type) {
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 75; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 3 + 's';
         particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        particle.style.opacity = Math.random() * 0.8 + 0.2;
         particlesContainer.appendChild(particle);
+    }
+    
+    // Update particle colors based on current theme
+    updateParticles(gameState.currentTheme);
+}
+
+// Check if daily challenge should be shown
+function checkDailyChallenge() {
+    const today = new Date().toDateString();
+    const lastCompleted = localStorage.getItem('dailyChallenge');
+    
+    if (lastCompleted !== today) {
+        elements.dailyChallenge.style.display = 'block';
+        gameState.dailyChallengeCompleted = false;
+    } else {
+        elements.dailyChallenge.style.display = 'none';
+        gameState.dailyChallengeCompleted = true;
     }
 }
 
 // Initialize the game
-setDifficulty('easy');

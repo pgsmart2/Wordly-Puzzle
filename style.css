@@ -3,13 +3,13 @@
 
 /* CSS Variables for theming */
 :root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --accent-color: #3b82f6;
+  --primary-color: #00d4ff;
+  --secondary-color: #0099cc;
+  --accent-color: #33e0ff;
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --danger-color: #ef4444;
-  --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-gradient: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   --card-background: rgba(255, 255, 255, 0.95);
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
@@ -22,25 +22,67 @@
 }
 
 /* Theme variations */
-.theme-forest {
-  --primary-color: #059669;
-  --secondary-color: #047857;
-  --accent-color: #10b981;
-  --background-gradient: linear-gradient(135deg, #34d399 0%, #059669 100%);
+.theme-cyberpunk {
+  --primary-color: #00ff88;
+  --secondary-color: #00cc6a;
+  --accent-color: #33ffaa;
+  --background-gradient: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --card-background: rgba(0, 0, 0, 0.8);
+  --text-primary: #00ff88;
+  --text-secondary: #66ffaa;
 }
 
-.theme-sunset {
-  --primary-color: #ea580c;
-  --secondary-color: #c2410c;
-  --accent-color: #f97316;
-  --background-gradient: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
-}
-
-.theme-neon {
-  --primary-color: #8b5cf6;
+.theme-galaxy {
+  --primary-color: #9333ea;
   --secondary-color: #7c3aed;
   --accent-color: #a855f7;
-  --background-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  --background-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+  --card-background: rgba(139, 92, 246, 0.1);
+}
+
+.theme-volcano {
+  --primary-color: #dc2626;
+  --secondary-color: #b91c1c;
+  --accent-color: #ef4444;
+  --background-gradient: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%);
+  --card-background: rgba(254, 202, 202, 0.9);
+}
+
+.theme-arctic {
+  --primary-color: #0ea5e9;
+  --secondary-color: #0284c7;
+  --accent-color: #38bdf8;
+  --background-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+  --card-background: rgba(255, 255, 255, 0.9);
+}
+
+.theme-rainbow {
+  --primary-color: #ec4899;
+  --secondary-color: #db2777;
+  --accent-color: #f472b6;
+  --background-gradient: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fbcfe8 50%, #f9a8d4 75%, #f472b6 100%);
+  --card-background: rgba(255, 255, 255, 0.9);
+}
+
+.theme-midnight {
+  --primary-color: #6366f1;
+  --secondary-color: #4f46e5;
+  --accent-color: #818cf8;
+  --background-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --card-background: rgba(30, 41, 59, 0.8);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+}
+
+/* Glowing effects for cyberpunk theme */
+.theme-cyberpunk .action-btn,
+.theme-cyberpunk .stat-card,
+.theme-cyberpunk .game-header {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.theme-cyberpunk #wordSearchTable td:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
 }
 
 /* Global styles */
@@ -481,6 +523,28 @@ body {
   color: white;
 }
 
+.action-btn.special {
+  background: linear-gradient(45deg, #8b5cf6, #a855f7);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn.special::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.action-btn.special:hover::before {
+  left: 100%;
+}
+
 .action-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
@@ -635,6 +699,58 @@ body {
   color: var(--text-secondary);
 }
 
+/* Daily Challenge */
+.daily-challenge {
+  background: linear-gradient(45deg, var(--warning-color), #fbbf24);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+  box-shadow: var(--shadow-medium);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.challenge-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.challenge-content i {
+  font-size: 2rem;
+}
+
+.challenge-content div {
+  flex: 1;
+}
+
+.challenge-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.challenge-content p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.challenge-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.challenge-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
 /* Particles */
 #particles {
   position: fixed;
@@ -653,6 +769,26 @@ body {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   animation: float 3s infinite ease-in-out;
+}
+
+/* Special effects */
+.word-explosion {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.explosion-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--success-color);
+  border-radius: 50%;
+  animation: explode 0.8s ease-out forwards;
+}
+
+.screen-shake {
+  animation: shake 0.5s ease-in-out;
 }
 
 /* Animations */
@@ -698,6 +834,28 @@ body {
   10% { opacity: 1; }
   90% { opacity: 1; }
   50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+  100% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+}
+
+@keyframes explode {
+  0% { 
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(0) translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 /* Responsive Design */
