@@ -3,28 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Search Game</title>
+    <title>WordHunt Pro - Advanced Word Search</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Word Search Game</h1>
-        <div id="difficulty">
-            <label for="difficultySelect">Select Difficulty:</label>
-            <select id="difficultySelect">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="logo">
+                <i class="fas fa-search"></i>
+                <h1>WordHunt Pro</h1>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span id="totalScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-fire"></i>
+                    <span id="streak">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <div class="control-group">
+                <label for="difficultySelect">
+                    <i class="fas fa-layer-group"></i>
+                    Difficulty
+                </label>
+                <select id="difficultySelect">
+                    <option value="easy">Beginner</option>
+                    <option value="medium">Explorer</option>
+                    <option value="hard">Master</option>
+                    <option value="expert">Legend</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="themeSelect">
+                    <i class="fas fa-palette"></i>
+                    Theme
+                </label>
+                <select id="themeSelect">
+                    <option value="default">Ocean</option>
+                    <option value="forest">Forest</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="neon">Neon</option>
+                </select>
+            </div>
+
+            <button id="powerUpBtn" class="power-up-btn" title="Use Hint Power-up">
+                <i class="fas fa-lightbulb"></i>
+                <span id="hintsLeft">3</span>
+            </button>
         </div>
-        <div id="timer">Time Left: <span id="timeLeft">60</span> seconds</div>
-        <table id="wordSearchTable"></table>
-        <div id="remainingWords"></div>
-        <div id="result"></div>
-        <div id="score">Score: <span id="scoreValue">0</span></div>
-        <button id="resetButton">Reset Game</button>
+
+        <!-- Game Stats -->
+        <div class="game-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Time</div>
+                    <div class="stat-value" id="timeLeft">60</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Score</div>
+                    <div class="stat-value" id="scoreValue">0</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Progress</div>
+                    <div class="stat-value" id="progressValue">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board">
+            <div class="grid-container">
+                <table id="wordSearchTable"></table>
+                <div class="combo-indicator" id="comboIndicator">
+                    <span class="combo-text">COMBO x<span id="comboMultiplier">1</span></span>
+                </div>
+            </div>
+            
+            <!-- Word List -->
+            <div class="word-list-container">
+                <h3>
+                    <i class="fas fa-list"></i>
+                    Find These Words
+                </h3>
+                <div id="remainingWords" class="word-list"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Actions -->
+        <div class="game-actions">
+            <button id="resetButton" class="action-btn primary">
+                <i class="fas fa-redo"></i>
+                New Game
+            </button>
+            <button id="pauseButton" class="action-btn secondary">
+                <i class="fas fa-pause"></i>
+                Pause
+            </button>
+            <button id="shuffleButton" class="action-btn tertiary">
+                <i class="fas fa-random"></i>
+                Shuffle
+            </button>
+        </div>
+
+        <!-- Result Modal -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Game Complete!</h2>
+                    <button class="close-btn" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="result-stats">
+                        <div class="result-item">
+                            <i class="fas fa-star"></i>
+                            <span>Final Score: <strong id="finalScore">0</strong></span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Time Used: <strong id="timeUsed">0s</strong></span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-check"></i>
+                            <span>Words Found: <strong id="wordsFound">0</strong></span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Best Combo: <strong id="bestCombo">1x</strong></span>
+                        </div>
+                    </div>
+                    <div class="achievement-section" id="achievementSection">
+                        <h3>Achievements Unlocked!</h3>
+                        <div id="achievementsList"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="playAgainBtn" class="action-btn primary">
+                        <i class="fas fa-play"></i>
+                        Play Again
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Particles Container -->
+        <div id="particles"></div>
+        
+        <!-- Sound Toggle -->
+        <button id="soundToggle" class="sound-toggle">
+            <i class="fas fa-volume-up"></i>
+        </button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
