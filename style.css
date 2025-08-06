@@ -1,0 +1,211 @@
+/* Include Manrope font */
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+#difficulty {
+    margin-bottom: 15px;
+}
+
+#difficultySelect {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#difficultySelect:hover {
+    border-color: #007BFF;
+    background-color: #e0f7ff;
+}
+
+#timer {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s, margin 0.3s ease;
+    margin: 10px;
+    width: calc(100% - 40px);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#score {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#remainingWords {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+#remainingWords h2 {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #d9534f;
+    transition: color 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+#leaderboard {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#leaderboard h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+#leaderboardList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#leaderboardList li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#leaderboardList li:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Highlighting and selection styles */
+#wordSearchTable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-collapse: collapse;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#wordSearchTable td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#wordSearchTable td:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+#wordSearchTable td.selected {
+    background-color: #ffeb3b;
+}
+
+#wordSearchTable td.found {
+    background-color: #76c7c0;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    #wordSearchTable td {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #scoreValue,
+    #timeLeft {
+        font-size: 20px;
+    }
+
+    button {
+        width: calc(100% - 20px);
+    }
+}
