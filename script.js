@@ -11,7 +11,7 @@ class WordSearchGame {
         this.timeLeft = 60;
         this.timer = null;
         this.difficulty = 'medium';
-        this.theme = 'cyberpunk';
+        this.theme = 'volcano';
         this.category = 'random';
         this.hintsLeft = 3;
         this.streak = 0;
